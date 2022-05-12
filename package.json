@@ -1,0 +1,22 @@
+{
+  "name": "cat_gallery",
+  "version": "1.0.0",
+  "description": "cat_gallery project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seonyoung53/cat_gallery.git"
+  },
+  "keywords": [
+    "cat"
+  ],
+  "author": "sywon53",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seonyoung53/cat_gallery/issues"
+  },
+  "homepage": "https://github.com/seonyoung53/cat_gallery#readme"
+}
