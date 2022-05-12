@@ -1,0 +1,24 @@
+.text_center {
+    text-align: center;
+}
+.search_input {
+    width: 12rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+}
+.search_button {
+    display: inline-block;
+    color: white;
+    background: dodgerblue;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    margin-left: 0.5rem;
+    padding: 0 1.2rem;
+    border: 0;
+    border-radius: 0.3rem;
+    outline: none;
+}
