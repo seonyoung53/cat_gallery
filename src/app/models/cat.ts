@@ -1,7 +1,12 @@
 export interface Cat {
-    id: number;
+    id: string;
     name: string;
-    age: number;
-    species: string;
-    photo: string;
+    image: CatImg
+}
+
+export interface CatImg {
+    id: string;
+    width: number;
+    height: number;
+    url: string;
 }

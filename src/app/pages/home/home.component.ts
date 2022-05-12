@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cat } from 'src/app/models/cat';
+import { Response } from 'src/app/common/response-container';
+import { Cat } from 'src/app/models/Cat';
 import { CatService } from 'src/app/services/cat.service';
 
 @Component({
@@ -9,7 +10,6 @@ import { CatService } from 'src/app/services/cat.service';
 })
 export class HomeComponent implements OnInit {
   catList: Cat[] = [];
-
   constructor(private catService: CatService) { }
 
   ngOnInit(): void {
@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
 
   // 고양이 리스트 조회
   getCatList(): void {
-    this.catService.getCatsList().subscribe(res => {
-      console.log('dfdf', res);
+    this.catService.getCatsListMock().subscribe((res: any) => {
+      this.catList = res?.data;
     })
   }
 
