@@ -5,6 +5,9 @@
 .text_center {
     text-align: center;
 }
+.text_right {
+    text-align: right;
+}
 .cursor_p {
     cursor: pointer;
 }

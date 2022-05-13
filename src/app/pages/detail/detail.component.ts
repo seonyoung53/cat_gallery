@@ -9,6 +9,7 @@ import { Cat } from 'src/app/models/cat';
 })
 export class DetailComponent implements OnInit {
   catDetail!: Cat;
+  heart = false;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe((param: any) => {
@@ -17,6 +18,10 @@ export class DetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  clickHeart() {
+    this.heart = this.heart ? false : true;
   }
 
 }

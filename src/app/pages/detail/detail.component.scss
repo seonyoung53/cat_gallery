@@ -4,7 +4,9 @@
 }
 .heart_box {
     width: 50%;
-    text-align: right;
+    text-align: center;
+    margin: auto;
+    display: block;
 }
 .heart_btn {
     cursor: pointer;
@@ -14,4 +16,8 @@
     width: 6rem;
     height: 2rem;
     text-align: center;
+}
+.clicked_heart {
+    color: red;
+    border: 1px solid red;
 }

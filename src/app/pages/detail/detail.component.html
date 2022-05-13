@@ -1,13 +1,15 @@
 <div>
-    <h1 class="text">{{catDetail.name}}</h1>
-    <section>
+    <h1 class="text_center">{{catDetail.name}}</h1>
+    <section class="text_center">
         <img class="cat_detail_img" 
             src="{{catDetail.image ? catDetail.image : 'assets/images/default_cat.jpg'}}" 
             alt="{{catDetail.id}}">
     </section>
     <section class="heart_box">
-        <button class="heart_btn">
-            <span class="mgR0_5">좋아요</span><i class="fas fa-heart" style="color:red;"></i>
-        </button>
+        <div class="text_right">
+            <button class="heart_btn" [class.clicked_heart]="heart" (click)="clickHeart()">
+                <span class="mgR0_5">좋아요</span><i class="fas fa-heart"></i>
+            </button>
+        </div>
     </section>
 </div>
