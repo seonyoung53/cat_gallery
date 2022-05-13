@@ -1,5 +1,8 @@
 <div>
-    <h1 class="text_center">{{catDetail.name}}</h1>
+    <section class="header">
+        <button class="home_btn"[routerLink]="''"><i class="fas fa-home"></i></button>
+        <h1 class="cat_name">{{catDetail.name}}</h1>    
+    </section>
     <section class="text_center">
         <img class="cat_detail_img" 
             src="{{catDetail.image ? catDetail.image : 'assets/images/default_cat.jpg'}}" 
