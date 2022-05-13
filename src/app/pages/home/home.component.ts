@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Response } from 'src/app/common/response-container';
-import { Cat } from 'src/app/models/Cat';
+import { Cat } from '../../models/cat';
 import { CatService } from 'src/app/services/cat.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,8 @@ import { CatService } from 'src/app/services/cat.service';
 })
 export class HomeComponent implements OnInit {
   catList: Cat[] = [];
-  constructor(private catService: CatService) { }
+  constructor(private catService: CatService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getCatList();
@@ -21,6 +22,16 @@ export class HomeComponent implements OnInit {
     this.catService.getCatsListMock().subscribe((res: any) => {
       this.catList = res?.data;
     })
+  }
+
+  // 상세 조회 페이지로 이동
+  async getCatDetail(cat: Cat) {
+    const params = {
+      id: cat.id,
+      name: cat.name,
+      image: cat.image?.url
+    }    
+    await this.router.navigate(['/detail'], {queryParams: params})
   }
 
 }

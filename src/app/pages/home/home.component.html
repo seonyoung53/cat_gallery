@@ -1,17 +1,15 @@
 <div>
-  <div class="text_center">
-    <h1>😸 고양이 사진 갤러리 😻</h1>
-  </div>
-  <div class="text_center search_box">
+  <h1 class="text_center">😸 고양이 사진 갤러리 😻</h1>
+  <section class="text_center search_box">
     <input class="search_input" type="text" formcontrolname="keyword" name="keyword">
     <button class="search_button" type="submit">Search</button>
-  </div>
+  </section>
   <section class="gallery">
-    <div class="cat_items" *ngFor="let cat of catList">
-      <span class="cat_name">{{cat?.name}}</span>
+    <div class="cat_items cursor_p" *ngFor="let cat of catList" (click)="getCatDetail(cat)">
+      <span class="cat_name">{{cat.name}}</span>
       <img class="cat_img" 
-        src="{{cat?.image?.url ? cat?.image?.url : 'assets/images/default_cat.jpg'}}" 
-        alt="{{cat?.id}}">
+        src="{{cat.image?.url ? cat.image?.url : 'assets/images/default_cat.jpg'}}" 
+        alt="{{cat.id}}">
     </div>
   </section>
 </div>
