@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Cat } from 'src/app/models/cat';
 
 @Component({
@@ -20,6 +20,7 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // 좋아요 클릭
   clickHeart() {
     this.heart = this.heart ? false : true;
   }

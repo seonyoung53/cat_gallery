@@ -18,20 +18,20 @@ export class HomeComponent implements OnInit {
   }
 
   // 고양이 리스트 조회
-  getCatList(): void {
+  getCatList() {
     this.catService.getCatsListMock().subscribe((res: any) => {
       this.catList = res?.data;
     })
   }
 
   // 상세 조회 페이지로 이동
-  async getCatDetail(cat: Cat) {
+  moveCatDetail(cat: Cat) {
     const params = {
       id: cat.id,
       name: cat.name,
       image: cat.image?.url
     }    
-    await this.router.navigate(['/detail'], {queryParams: params})
+    this.router.navigate(['/detail'], {queryParams: params})
   }
 
 }

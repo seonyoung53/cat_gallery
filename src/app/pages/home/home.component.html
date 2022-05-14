@@ -5,7 +5,7 @@
     <button class="search_button" type="submit">Search</button>
   </section>
   <section class="gallery">
-    <div class="cat_items cursor_p" *ngFor="let cat of catList" (click)="getCatDetail(cat)">
+    <div class="cat_items cursor_p" *ngFor="let cat of catList" (click)="moveCatDetail(cat)">
       <span class="cat_name">{{cat.name}}</span>
       <img class="cat_img" 
         src="{{cat.image?.url ? cat.image?.url : 'assets/images/default_cat.jpg'}}" 
