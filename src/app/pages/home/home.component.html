@@ -1,9 +1,9 @@
 <div>
   <h1 class="text_center">😸 고양이 사진 갤러리 😻</h1>
-  <section class="text_center search_box">
-    <input class="search_input" type="text" formcontrolname="keyword" name="keyword">
+  <form class="text_center search_box" [formGroup]="form" (submit)="getCatList()">
+    <input class="search_input" type="text" formControlName="keyword">
     <button class="search_button" type="submit">Search</button>
-  </section>
+  </form>
   <section class="gallery">
     <div class="cat_items cursor_p" *ngFor="let cat of catList" (click)="moveCatDetail(cat)">
       <span class="cat_name">{{cat.name}}</span>
@@ -11,5 +11,8 @@
         src="{{cat.image?.url ? cat.image?.url : 'assets/images/default_cat.jpg'}}" 
         alt="{{cat.id}}">
     </div>
+  </section>
+  <section *ngIf="!catList.length">
+    <h5 class="mgL1">검색 결과가 없습니다.</h5>
   </section>
 </div>
