@@ -11,13 +11,12 @@ export class DetailComponent implements OnInit {
   catDetail!: Cat;
   heart = false;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
     this.route.queryParams.subscribe((param: any) => {
       this.catDetail = param;
     })
-   }
-
-  ngOnInit(): void {
   }
 
   // 좋아요 클릭

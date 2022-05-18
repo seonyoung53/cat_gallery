@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
   // 고양이 리스트 조회
   getCatList() {
-    this.catService.getCatsListMock().subscribe((res: any) => {
-      this.catList = res?.data;
+    this.catService.getCatsList().subscribe((res: any) => { // TODO Type Error Check
+      this.catList = res;
     })
   }
 

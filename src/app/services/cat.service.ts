@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Response } from '../common/response-container';
 import { Cat } from '../models/cat';
 
 @Injectable({
@@ -12,10 +11,19 @@ export class CatService {
   constructor(private http: HttpClient) { }
 
   /**
-   * 고양이 리스트 조회(더미)
-   * @returns 
+   * 고양이 리스트 조회
    */
-  getCatsListMock(): Observable<Response<Cat>> {
-    return this.http.get<Response<Cat>>('/assets/dummy/catList.json');
+  getCatsList(): Observable<Cat> {
+    const url = 'https://api.thecatapi.com/v1/breeds';
+    return this.http.get<Cat>(url);
+  }
+
+  /**
+   * 고양이 리스트 검색
+   * @param keyword 
+   */
+  searchCatsList(keyword: string): Observable<Cat> {
+    const url = 'https://api.thecatapi.com/v1/breeds/search?q=' + keyword;
+    return this.http.get<Cat>(url);
   }
 }
